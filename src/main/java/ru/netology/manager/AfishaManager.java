@@ -9,13 +9,13 @@ import ru.netology.domain.Film;
 
 public class AfishaManager {
 
-//    public AfishaManager(int resultLength) {
-//        this.resultLength = resultLength;
-//    }
+    public AfishaManager(int resultLength) {
+        this.resultLength = resultLength;
+    }
 
-    private Film[] films = new Film[10];
+    private Film[] films = new Film[0];
 
-    private int resultLength;
+    private int resultLength = 10;
 
     public void add(Film film) {
         int length = films.length + 1;
@@ -31,8 +31,10 @@ public class AfishaManager {
 
     public Film[] show() {
 
-        if (resultLength != 10) {
+        if (films.length != 10 && films.length <= 10) {
             resultLength = films.length;
+        } else {
+            resultLength = 10;
         }
 
         Film[] result = new Film[resultLength];
