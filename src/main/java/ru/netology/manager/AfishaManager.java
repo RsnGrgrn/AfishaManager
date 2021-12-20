@@ -31,10 +31,10 @@ public class AfishaManager {
 
     public Film[] show() {
 
-        if (films.length != 10 && films.length <= 10) {
+        if (films.length <= getResultLength()) {
             resultLength = films.length;
         } else {
-            resultLength = 10;
+            resultLength = getResultLength();
         }
 
         Film[] result = new Film[resultLength];
